@@ -1,0 +1,61 @@
+To download new datasets:
+    - Search at data.cityofchicago.org
+    - Find name of dataset in url bar
+    - type the following:
+        $ wget http://data.cityofchicago.org/views/<name of dataset>/rows.<filetype>
+      So, to get the 2011 data in CSV, the command was:
+        $ wget http://data.cityofchicago.org/views/qnrb-dui6/rows.csv
+
+The JSON Chicago crime data is formatted as such:
+    - meta tag that describes basic data about the file:
+        - date created/modified
+        - description of db
+        - other various fields
+        - importantly: format and order of fields in actual crime statistics
+    - data field makes up rest of it (i.e. everything other than the first 500-600 lines);
+    array of arrays of attributes
+
+data block (each event is on one line):
+-----------------------------------------------------------------------------------------------------------------------------
+...
+      },
+      "tags" : [ "crime", "police" ],
+      "flags" : [ "default" ]
+    }
+  },
+  "data" : [ [ 2, "8ADD0330-93D9-4F9B-A72C-D49D4A7B84CB", 2, 1330975719, "21484", 1330981185, "21484", "{\n}", "1309881", "G000036", "2001-01-01T00:07:00", "038XX W 65 ST", "1310", "CRIMINAL DAMAGE", "TO PROPERTY", "RESIDENCE", false, false, "0833", null, "14", "1152000", "1861189", "2006-03-31T22:03:38", "2001", "41.77496840155923", "-87.71834387127393", [ null, "41.77496840155923", "-87.71834387127393", null, false ] ]
+, [ 3, "B5617C68-D9C9-4126-844B-347292D2FB09", 3, 1330975719, "21484", 1330975719, "21484", "{\n}", "1309882", "G000043", "2001-01-01T00:01:00", "012XX S FEDERAL ST", "1310", "CRIMINAL DAMAGE", "TO PROPERTY", "RESIDENCE", false, false, "0132", null, "14", "1175939", "1894494", "2006-03-31T22:03:38", "2001", "41.86585694928718", "-87.62958692996486", [ null, "41.86585694928718", "-87.62958692996486", null, false ] ]
+, [ 4, "A2916477-5909-49E8-A8B8-D3E506030977", 4, 1330975719, "21484", 1330975719, "21484", "{\n}", "1309885", "G000065", "2001-01-01T00:00:00", "045XX N CLARENDON AV", "1320", "CRIMINAL DAMAGE", "TO VEHICLE", "STREET", false, false, "2313", null, "14", "1170063", "1930105", "2006-03-31T22:03:38", "2001", "41.96370561107576", "-87.65011653126096", [ null, "41.96370561107576", "-87.65011653126096", null, false ] ]
+, [ 5, "3FD775D3-E96F-4863-B2ED-46A75EBE86D4", 5, 1330975719, "21484", 1330975719, "21484", "{\n}", "1309886", "G000052", "2001-01-01T00:43:00", "059XX S MAY ST", "1310", "CRIMINAL DAMAGE", "TO PROPERTY", "STREET", false, false, "0712", null, "14", "1169712", "1865226", "2006-03-31T22:03:38", "2001", "41.78568049397415", "-87.65329694479001", [ null, "41.78568049397415", "-87.65329694479001", null, false ] ]
+, ...
+-----------------------------------------------------------------------------------------------------------------------------
+
+- formatting for crime data located in: /meta/view/columns; columns is an array of dicts
+- crime data itself located in /data
+- Formatting:
+		sid
+		id
+		position
+		created_at
+		created_meta
+		updated_at
+		updated_meta
+		meta
+		Case Number
+		Date
+		Block
+		IUCR
+		Primary Type
+		Description
+		Location Description
+		Arrest
+		Domestic
+		Beat
+		Ward
+		FBI Code
+		X Coordinate
+		Y Coordinate
+		Year
+		Latitude
+		Longitude
+		Location
