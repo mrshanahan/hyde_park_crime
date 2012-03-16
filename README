@@ -1,0 +1,109 @@
+Hyde Park Crime Data
+
+This program will compare the crime rates on four campuses - UChicago, IIT,
+UIC East, and DePaul (Loop) - based on Chicago crime data from
+data.cityofchicago.org.
+
+To use, just run ./hpc.py with the data files as arguments.  Best results are
+achieved by labeling files as data_([a-zA-Z0-9\-]+)(_.*)?.csv, where group 1
+is the year that the file represents. Downloading pylab is highly recommended,
+as this will allow a graphical representation, as opposed to a ASCII-text table.
+
+Year data is really only useful with the graph, so files can be named whatever
+without pylab (though preferably named uniquely within the year, if they do
+follow the format).
+
+Results of running without pylab:
+
+$ ./hpc.py data/data_20*.csv
+Parsing file "data_2006.csv"
+Parsing file "data_2007.csv"
+Parsing file "data_2008.csv"
+Parsing file "data_2009.csv"
+Parsing file "data_2010.csv"
+Parsing file "data_2011.csv"
+Parsing file "data_2011_test.csv"
+Parsing file "data_2012.csv"
+hpc.py: warning: could not import pylab; cannot graph data. Printing out plaintext.
+
+UChicago: NE (41.791057,-87.598077), SW (41.784048,-87.606024)
+	ASSAULT:                            36
+	BATTERY:                            122
+	BURGLARY:                           39
+	CRIM SEXUAL ASSAULT:                6
+	CRIMINAL DAMAGE:                    100
+	CRIMINAL TRESPASS:                  107
+	DECEPTIVE PRACTICE:                 51
+	KIDNAPPING:                         1
+	LIQUOR LAW VIOLATION:               1
+	MOTOR VEHICLE THEFT:                90
+	NARCOTICS:                          31
+	OFFENSE INVOLVING CHILDREN:         8
+	OTHER OFFENSE:                      63
+	PUBLIC PEACE VIOLATION:             4
+	ROBBERY:                            46
+	SEX OFFENSE:                        8
+	THEFT:                              496
+	WEAPONS VIOLATION:                  6
+
+IIT: NE (41.837767,-87.624008), SW (41.830509,-87.629943)
+	ASSAULT:                            21
+	BATTERY:                            105
+	BURGLARY:                           13
+	CRIM SEXUAL ASSAULT:                6
+	CRIMINAL DAMAGE:                    54
+	CRIMINAL TRESPASS:                  38
+	DECEPTIVE PRACTICE:                 53
+	INTIMIDATION:                       1
+	KIDNAPPING:                         1
+	MOTOR VEHICLE THEFT:                17
+	NARCOTICS:                          47
+	OFFENSE INVOLVING CHILDREN:         1
+	OTHER OFFENSE:                      21
+	PUBLIC PEACE VIOLATION:             1
+	ROBBERY:                            55
+	SEX OFFENSE:                        3
+	STALKING:                           1
+	THEFT:                              281
+	WEAPONS VIOLATION:                  5
+
+UIC East: NE (41.874357,-87.647019), SW (41.862865,-87.653995)
+	ARSON:                              1
+	ASSAULT:                            81
+	BATTERY:                            190
+	BURGLARY:                           58
+	CRIM SEXUAL ASSAULT:                6
+	CRIMINAL DAMAGE:                    145
+	CRIMINAL TRESPASS:                  18
+	DECEPTIVE PRACTICE:                 46
+	GAMBLING:                           2
+	HOMICIDE:                           3
+	INTERFERE WITH PUBLIC OFFICER:      3
+	KIDNAPPING:                         2
+	MOTOR VEHICLE THEFT:                56
+	NARCOTICS:                          29
+	OFFENSE INVOLVING CHILDREN:         6
+	OTHER OFFENSE:                      83
+	PUBLIC PEACE VIOLATION:             7
+	ROBBERY:                            29
+	SEX OFFENSE:                        2
+	STALKING:                           4
+	THEFT:                              312
+	WEAPONS VIOLATION:                  7
+
+DePaul Loop: NE (41.878202,-87.626115), SW (41.874369,-87.627484)
+	ASSAULT:                            30
+	BATTERY:                            57
+	BURGLARY:                           6
+	CRIM SEXUAL ASSAULT:                4
+	CRIMINAL DAMAGE:                    42
+	CRIMINAL TRESPASS:                  67
+	DECEPTIVE PRACTICE:                 67
+	LIQUOR LAW VIOLATION:               3
+	MOTOR VEHICLE THEFT:                12
+	NARCOTICS:                          41
+	OTHER OFFENSE:                      36
+	PUBLIC PEACE VIOLATION:             10
+	ROBBERY:                            32
+	SEX OFFENSE:                        2
+	THEFT:                              412
